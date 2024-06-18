@@ -23,8 +23,8 @@ const PropertyDetails = () => {
   })
   console.log(property)
   // add wishlist
-  const handleWishlist = property => {
-    axiosSecure.patch(`/property/status/${property._id}`)
+  const handleWishlist = id => {
+    axiosSecure.patch(`/wislist/status/${id}`)
       .then(res => {
         console.log(res.data)
         if (res.data.modifiedCount > 0) {
@@ -121,7 +121,7 @@ const PropertyDetails = () => {
                 </div>
                 <hr />
                 <div className="flex">
-                  <div> <button onClick={() => handleWishlist(property)} className="btn bg-green-900 text-white">Add To Wishlist</button></div>
+                  <div> <button onClick={() => handleWishlist(property._id)} className="btn bg-green-900 text-white">Add To Wishlist</button></div>
 
                   <div><button onClick={() => setIsEditModal(true)} className="btn bg-blue-900 text-white">Add Review</button>
                     {/* modal */}

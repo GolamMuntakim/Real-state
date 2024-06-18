@@ -38,6 +38,7 @@ const AddRoomForm = () => {
         const title = form.title.value 
         const price = form.price.value 
         const status = "pending"
+        // const add ="wishlist"
         const image = form.image.files[0]
         const agent = {
             name : user?.displayName,

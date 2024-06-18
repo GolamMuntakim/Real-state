@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import useAuth from "../hooks/useAuth"
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
@@ -78,8 +78,8 @@ const OfferModalForm = ({ handleOfferSubmit,onChange,value, setPropertyData, pro
                                     name='price'
                                     id='price'
                                     type='number'
-                                    value={propertyData?.price}
-                                    onChange={(e) => setPropertyData({ ...propertyData, price: e.target.value })}
+                                    value={propertyData?.offerprice}
+                                    onChange={(e) => setPropertyData({ ...propertyData, offerprice: e.target.value })}
                                     placeholder='Price'
                                     required
                                 />

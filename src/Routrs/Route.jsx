@@ -16,6 +16,12 @@ import ManageProperty from "../Component/Admin/ManageProperty";
 import Wishlist from "../Component/Guest/Wishlist";
 import PropertyBrought from "../Component/Guest/PropertyBrought";
 import MyReviews from "../Component/Guest/MyReviews";
+import MySoldProperties from "../Component/Agent/MySoldProperties";
+import ManageReviews from "../Component/Admin/ManageReviews";
+import AllProperties from "../Component/AllProperties";
+import Advertaisment from "../Component/Advertaisment";
+import Advertise from "../Component/Admin/Advertise";
+import Statistics from "../Component/Common/Statistics";
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +36,10 @@ export const router = createBrowserRouter([
         {
           path:'propertyDetails/:id',
           element:<PropertyDetails></PropertyDetails>
+        },
+        {
+          path:'all-properties',
+          element:<AllProperties></AllProperties>
         }
       ]
     },
@@ -41,7 +51,7 @@ export const router = createBrowserRouter([
      children:[
       {
         index: true,
-        element: <Common></Common>
+        element: <Statistics></Statistics>
       },
       {
         path:'profile',
@@ -78,6 +88,18 @@ export const router = createBrowserRouter([
       {
         path:'reviews',
         element: <MyReviews></MyReviews>
+      },
+      {
+        path:'sold',
+        element: <MySoldProperties></MySoldProperties>
+      },
+      {
+        path:'manage-reviews',
+        element: <ManageReviews></ManageReviews>
+      },
+      {
+        path:'advertise',
+        element: <Advertise></Advertise>
       },
       
      ]

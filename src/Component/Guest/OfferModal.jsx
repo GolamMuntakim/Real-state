@@ -18,13 +18,14 @@ import {
 import OfferModalForm from './OfferModalForm'
 import useAuth from '../hooks/useAuth'
 import { useMutation } from '@tanstack/react-query'
+import { useNavigate } from 'react-router-dom'
   
   const OfferModal = ({ propertys, setPropertys,  refetch}) => {
     const { user } = useAuth()
       const axiosSecure =  useAxiosSecure()
       const [loading, setLoading] = useState(false)
       const [propertyData, setPropertyData] = useState(propertys)
-     
+     const navigate = useNavigate()
       const [value, onChange] = useState(new Date());
       console.log(propertyData)
 
@@ -33,10 +34,11 @@ import { useMutation } from '@tanstack/react-query'
         e.preventDefault()
         setLoading(true)
         const form = e.target 
-        // const id = propertyData?._id
+        const propertyId = propertyData?._id;
         const location = form.location.value 
-        const title = form.title.value 
-        const price = form.price.value 
+        const title = form.title.value
+        const price = propertyData?.price 
+        const offerprice =  parseFloat(form.price.value) 
         const agent = form.name.value
         const image = propertyData?.image
         const status = "pending"
@@ -46,8 +48,14 @@ import { useMutation } from '@tanstack/react-query'
             email:user?.email,
            
         }
+        // const minAcceptablePrice = propertyData?.price * 0.2;
+        if (offerprice < price*0.2) {
+          setLoading(false);
+          toast.error(`Offer price cannot be less than 20% of the property price `);
+          return;
+      }
         try{
-            const OfferedData = { location, title,price,status,agent,guest,image,date: value}
+            const OfferedData = {propertyId, location, title,price,status,agent,guest,image,date: value,offerprice}
             const {data} = await axiosSecure.post(`/offered/${e._id}`, OfferedData)
             console.log(data)
             refetch()
@@ -55,6 +63,7 @@ import { useMutation } from '@tanstack/react-query'
             setPropertys(null)
             setLoading(false)
             toast.success('Your Offer sent succesfully')
+            navigate('/')
             console.table(OfferedData)
           
             //post request to server
@@ -103,7 +112,9 @@ import { useMutation } from '@tanstack/react-query'
                     as='h3'
                     className='text-lg font-medium text-center leading-6 text-gray-900'
                   >
-                    Make An Offer
+                    Make An Offer <br />
+                    <span>You at least have to offer more than 20%</span>
+
                   </DialogTitle>
                   <div className='mt-2 w-full'>
                       {/* Update room form */}

@@ -14,13 +14,15 @@ import {
   import useAxiosSecure from '../hooks/useAxiosSecure'
 
 import ReviewModalForm from './ReviewModalForm'
+import useAuth from '../hooks/useAuth'
   
   const ReviewModal = ({ setIsEditModalOpen, isOpen , property, refetch}) => {
+    const {user} = useAuth()
       const axiosSecure =  useAxiosSecure()
       const [loading, setLoading] = useState(false)
       const [propertyData, setPropertyData] = useState(property)
       const [value, onChange] = useState(new Date());
-      
+      console.log(propertyData)
       const handleReviewSubmit = async e =>{
         e.preventDefault()
         setLoading(true)
@@ -28,9 +30,12 @@ import ReviewModalForm from './ReviewModalForm'
         const title = form.title.value 
         const description = form.description.value 
         const agent = form.name.value
+        const reviewrImage = user?.photoURL
+        const reviewerName = user?.displayName 
+        const reviewerEmail = user?.email
        
         try{
-            const reviewData = { description, title,agent,date: value}
+            const reviewData = { description, title,agent,date: value,reviewrImage,reviewerName,reviewerEmail}
             const {data} = await axiosSecure.post(`/review/${e._id}`, reviewData)
             console.log(data)
             refetch()

@@ -14,18 +14,7 @@ const RequestedProperty = () => {
           return data
         }
       })
-       //delete 
-       const {mutateAsync} = useMutation({
-        mutationFn : async id =>{
-            const {data} = await axiosSecure.delete(`/offers/delete/${id}`)
-            return data
-        },
-        onSuccess:data =>{
-            console.log(data)
-            refetch()
-            toast.success('Offer deleted succesfully')
-        }
-      })
+     
       //update property status
       const handleAccept = offer => {
         axiosSecure.patch(`/offer/status/${offer._id}`)
@@ -43,16 +32,32 @@ const RequestedProperty = () => {
                 }
             })
     }
+      const handleOfferReject = offers => {
+        axiosSecure.patch(`/offers/delete/${offers._id}`)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.modifiedCount > 0) {
+                    refetch()
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: `${offers.title} is Rejected`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+    }
 
       //handle delete
-      const handleOfferdelete = async id =>{
-        console.log(id)
-        try{
-            await mutateAsync(id)
-        }catch(err){
-            console.log(err)
-        }
-      }
+      // const handleOfferdelete = async id =>{
+      //   console.log(id)
+      //   try{
+      //       await mutateAsync(id)
+      //   }catch(err){
+      //       console.log(err)
+      //   }
+      // }
       if(isLoading) return <LoadingSpinner></LoadingSpinner>
     return (
         <div>
@@ -96,7 +101,7 @@ const RequestedProperty = () => {
                     >
                      Offered price
                     </th>
-
+                   
                     <th
                       scope='col'
                       className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
@@ -109,6 +114,7 @@ const RequestedProperty = () => {
                     >
                      Reject
                     </th>
+                    
                   </tr>
                 </thead>
                 <tbody>
@@ -129,17 +135,26 @@ const RequestedProperty = () => {
                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                        <p className='text-gray-900 whitespace-no-wrap'>{offer?.price}</p>
                      </td>
-                     <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+                     {offer.status !== 'Accepted' && offer.status !== 'Rejected' && offer.status !== 'Bought' &&(
+                      <>
+                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                      <button 
                      onClick={()=>handleAccept(offer)} 
-                     className="btn bg-green-900 text-white ">Accept</button>
+                     className="btn bg-green-900 text-white "
+                     >Accept</button>
                      </td>
                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                      <button 
-                     onClick={()=>handleOfferdelete(offer._id)} 
+                     onClick={()=>handleOfferReject(offer)} 
                      className="btn bg-red-900 text-white ">Reject</button>
                      </td>
-                   </tr>)
+                      </>
+                     )}
+                     <td>
+                      <p>{offer.status === "Accepted" || offer.status === "Rejected" || offer.status === "Bought" ? offer.status : ""}</p>
+                     </td>
+                   </tr>
+                   )
                      
                 }
 

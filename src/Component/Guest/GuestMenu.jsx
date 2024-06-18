@@ -48,6 +48,11 @@ const GuestMenu = () => {
 //   }
   return (
     <>
+    <MenuItem
+        icon={BsFingerprint}
+        label='My Statistics'
+        address='/dashboard'
+      />
       <MenuItem
         icon={BsFingerprint}
         label='My Wishlist'

@@ -19,7 +19,7 @@ const Wishlist = () => {
         queryKey : ['manage-property'],
         queryFn : async()=>{
           const {data} = await axiosSecure.get(`/manage-property`)
-          return data.filter(state => state.add === 'wishlist')
+          return data.filter(state => state.add === 'wishlists')
         }
       })
     
