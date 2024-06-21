@@ -36,7 +36,7 @@ const Advertise = () => {
         <div>
              <div className='container mx-auto px-4 sm:px-8'>
       <Helmet>
-        <title>Manage Property</title>
+        <title>Advertise Property</title>
       </Helmet>
       <div className='py-8'>
         <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
@@ -46,31 +46,31 @@ const Advertise = () => {
                 <tr>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-black  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                   >
                     Image
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-black  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                   >
                     Title
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-black  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                   >
                     Price
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-black  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                   >
                     Agent Name
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-black  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                   >
                    Advertise
                   </th>
@@ -101,7 +101,7 @@ const Advertise = () => {
                      
                         <button  
                        onClick={() => handleAdvertise(property)}
-                         className='btn bg-blue-900 text-white'>Advertise</button> 
+                         className='btn bg-blue-900 text-white'>{property.newAdd === "advertise" ? "Advertiesd complete" : "Advertise"}</button> 
                     </td>
                   </tr>)
                 }

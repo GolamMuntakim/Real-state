@@ -21,9 +21,9 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  const createUser = (name,email, password) => {
+  const createUser = (email, password) => {
     setLoading(true)
-    return createUserWithEmailAndPassword(auth,name, email, password)
+    return createUserWithEmailAndPassword(auth,email, password)
   }
 
   const signIn = (email, password) => {
@@ -67,7 +67,7 @@ const AuthProvider = ({ children }) => {
   // save user
   const saveUser = async user =>{
     const currentUser = {
-      name : user?.displayName || user?.name ,
+      name :  user.email.split('@')[0].substring(0, 4) ,
       email : user?.email,
       role : 'guest',
       status: 'pending',
@@ -78,6 +78,33 @@ const AuthProvider = ({ children }) => {
   }
 
   // onAuthStateChange
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+  //     setUser(currentUser);
+  //     if (currentUser) {
+  //       try {
+  //         // Update profile with displayName if available
+  //         if (currentUser.name === null && currentUser.emailVerified) {
+  //           await updateProfile(auth.currentUser, {
+  //             displayName: currentUser.email.split('@')[0], 
+  //           });
+  //         }
+  //         // Save user information to backend
+  //         await saveUser(auth.currentUser);
+  
+  //         // Get token after saving user
+  //         getToken(currentUser.email);
+  //       } catch (error) {
+  //         console.error('Error updating profile or saving user:', error);
+  //       }
+  //     }
+  //     setLoading(false);
+  //   });
+  
+  //   return () => {
+  //     return unsubscribe();
+  //   };
+  // }, []);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser)

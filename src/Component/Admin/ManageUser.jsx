@@ -6,9 +6,11 @@ import { useQuery } from '@tanstack/react-query'
 import Swal from "sweetalert2";
 import useAxiosSecure from '../hooks/useAxiosSecure'
 import LoadingSpinner from '../LoadingSpinner'
+import useAuth from '../hooks/useAuth';
 
 const ManageUsers = () => {
-    // const {user} = useAuth()
+     
+   
     const axiosSecure = useAxiosSecure()
     // fetch users data
     const {data: users=[], isLoading, refetch} = useQuery({
@@ -111,38 +113,38 @@ const ManageUsers = () => {
                   <tr>
                   <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Name
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Email
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Make Agent
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Make Admin
                     </th>
 
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900 border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Mark As Fraud
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                     Delete User
                     </th>
@@ -152,7 +154,7 @@ const ManageUsers = () => {
                 {
                     users.map(user=>  <tr key={user._id}>
                         <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                       <p className='text-gray-900 whitespace-no-wrap'>{user.name}</p>
+                       <p className='text-gray-900 whitespace-no-wrap'>{user?.name || user?.displaName}</p>
                      </td>
                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                        <p className='text-gray-900 whitespace-no-wrap'>{user?.email}</p>

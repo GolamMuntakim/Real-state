@@ -80,44 +80,44 @@ const ManageProperty = () => {
                   <tr>
                   <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Title
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Location
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Agent Name
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Agent Email
                     </th>
 
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                      Price
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                     Verify
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                     Reject
                     </th>
@@ -139,11 +139,14 @@ const ManageProperty = () => {
                        <p className='text-gray-900 whitespace-no-wrap'>{property?.agent.email}</p>
                      </td>
                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+                       <p className='text-gray-900 whitespace-no-wrap'>{property?.price}</p>
+                     </td>
+                     <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                      <button 
                      onClick={()=>handleVerified(property)}
                      
                       className="btn bg-green-900 text-white ">
-                    verify
+                    {property.status === "pending" ? 'verify' : 'verified'}
                         </button>
                      </td>
                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
