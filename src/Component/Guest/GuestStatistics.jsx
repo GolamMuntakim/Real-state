@@ -27,8 +27,8 @@ const GuestStatistics = () => {
     console.log(chartData)
     if(isLoading) return <LoadingSpinner></LoadingSpinner>
     return (
-        <div>
-        Welcome to Agent Dashboard
+        <div className="font-bold text-3xl text-center">
+        Welcome to Guest Dashboard
         <div>
         <div>
       

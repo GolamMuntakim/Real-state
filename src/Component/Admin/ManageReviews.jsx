@@ -51,31 +51,31 @@ const ManageReviews = () => {
                 <tr>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-[#006769]  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                   >
                     Reviewer Image
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-[#006769]  border-b border-gray-200 text-white   text-left text-sm uppercase font-normal'
                   >
                     Reviews Email
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-[#006769]  border-b border-gray-200 text-white   text-left text-sm uppercase font-normal'
                   >
                     Reviewr Name
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-[#006769]  border-b border-gray-200 text-white   text-left text-sm uppercase font-normal'
                   >
                    Review
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-[#006769]  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                   >
                    Delete
                   </th>

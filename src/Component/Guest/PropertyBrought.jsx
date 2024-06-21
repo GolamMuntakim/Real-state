@@ -4,8 +4,10 @@ import { useQuery } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@headlessui/react';
 import BookingModal from './BookingModal';
+import useAuth from '../hooks/useAuth';
 
 const PropertyBrought = () => {
+  const {user} = useAuth()
   const [propertys, setPropertys] = useState(null)
   const [isOpen, setIsOpen] = useState(false)
   const { data: propertyes = [], isLoading, refetch } = useQuery({
@@ -15,7 +17,8 @@ const PropertyBrought = () => {
       return data
     }
   })
-  
+  console.log(propertyes)
+  const filteredProperties = propertyes.filter(property => property?.guest?.email === user?.email);
   console.log(propertyes)
   const closeModal = () =>{
     setIsOpen(false)
@@ -72,7 +75,7 @@ const PropertyBrought = () => {
               </thead>
               <tbody>
                 {
-                  propertyes.map(property => <tr key={property._id}>
+                  filteredProperties.map(property => <tr key={property._id}>
                     <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                       <p className='text-gray-900 whitespace-no-wrap'>{property?.location}</p>
                     </td>

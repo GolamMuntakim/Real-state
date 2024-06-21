@@ -34,6 +34,7 @@ const AddRoomForm = () => {
         e.preventDefault()
         setLoading(true)
         const form = e.target 
+        const email = user?.email
         const location = form.location.value 
         const title = form.title.value 
         const price = form.price.value 
@@ -49,7 +50,7 @@ const AddRoomForm = () => {
         try{
             const image_url = await imageUpload(image)
             const propertyData = {
-                location, title,price,status,image:image_url ,agent
+                location, title,price,status,image:image_url ,agent,email
             }
             console.table(propertyData)
 

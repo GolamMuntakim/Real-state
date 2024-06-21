@@ -10,12 +10,7 @@ import AgentMenu from './DashboardItem/AgentMenu'
 import useRole from './hooks/useRole'
 import GuestMenu from './Guest/GuestMenu'
 import AdminMenu from './Admin/AdminMenu'
-// import useRole from '../../../hooks/useRole'
-// import MenuItem from './Meunu/MenuItem'
-// import HostMenu from './HostMenu'
-// import AdminMenu from './Meunu/AdminMenu'
-// import GuestMenu from './Meunu/GuestMenu'
-// import ToggleBtn from '../../Shared/Button/ToggleBtn'
+
 
 const Sidebar = () => {
 //   const { logOut } = useAuth()
@@ -49,13 +44,6 @@ const Sidebar = () => {
             </Link>
           </div>
         </div>
-
-        {/* <button
-          onClick={handleToggle}
-          className='mobile-menu-button p-4 focus:outline-none focus:bg-gray-200'
-        >
-          <AiOutlineBars className='h-5 w-5' />
-        </button> */}
       </div>
 
       {/* Sidebar */}
@@ -89,7 +77,6 @@ const Sidebar = () => {
           {/* Nav Items */}
           <div className='flex flex-col justify-between flex-1 mt-6'>
             {/* Conditional toggle button here.. */}
-            {/* {role === 'host' && <ToggleBtn toggleHandler={toggleHandler} toggle={toggle}></ToggleBtn>} */}
 
             {/*  Menu Items */}
             <nav>

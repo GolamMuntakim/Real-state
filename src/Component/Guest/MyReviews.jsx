@@ -3,9 +3,11 @@ import { axiosSecure } from "../hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
 import LoadingSpinner from "../LoadingSpinner";
 import toast from "react-hot-toast";
+import useAuth from "../hooks/useAuth";
 
 
 const MyReviews = () => {
+  const {user} = useAuth()
     const {data: reviews=[], isLoading, refetch} = useQuery({
         queryKey : ['reviews'],
         queryFn : async()=>{
@@ -13,6 +15,9 @@ const MyReviews = () => {
           return data
         }
       })
+      console.log(reviews)
+
+      const filteredProperties = reviews.filter(property => property.reviewerEmail === user.email);
        //delete 
        const {mutateAsync} = useMutation({
         mutationFn : async id =>{
@@ -82,7 +87,7 @@ const MyReviews = () => {
                 </thead>
                 <tbody>
                 {
-                    reviews.map(property=>  <tr key={property._id}>
+                    filteredProperties.map(property=>  <tr key={property._id}>
                         <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                        <p className='text-gray-900 whitespace-no-wrap'>{property.title}</p>
                      </td>

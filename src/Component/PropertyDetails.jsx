@@ -8,10 +8,11 @@ import { axiosSecure } from "./hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import ReviewModal from "./Guest/ReviewModal";
+import useAuth from "./hooks/useAuth";
 
 
 const PropertyDetails = () => {
-
+ const {user} = useAuth()
   const { id } = useParams()
   const axiosCommon = useAxiosCommon()
   const { data: property = {}, isLoading, refetch } = useQuery({
@@ -24,7 +25,8 @@ const PropertyDetails = () => {
   console.log(property)
   // add wishlist
   const handleWishlist = id => {
-    axiosSecure.patch(`/wislist/status/${id}`)
+    const email =  {email: user.email}
+    axiosSecure.patch(`/wislist/status/${id}`,email)
       .then(res => {
         console.log(res.data)
         if (res.data.modifiedCount > 0) {

@@ -7,6 +7,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import useAuth from '../hooks/useAuth';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import OfferModal from './OfferModal';
+import useRole from '../hooks/useRole';
 
 const Wishlist = () => {
     const {user} = useAuth()
@@ -22,6 +23,9 @@ const Wishlist = () => {
           return data.filter(state => state.add === 'wishlists')
         }
       })
+    console.log(propertyes)
+    const filteredProperties = propertyes.filter(property => property.email === user.email);
+
     
 
       //delete 
@@ -50,7 +54,7 @@ const Wishlist = () => {
     return (
         <div className='container mx-auto px-4 sm:px-8'>
         <Helmet>
-          <title>Manage Property</title>
+          <title>Wishlist</title>
         </Helmet>
         <div className='py-8'>
           <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
@@ -117,7 +121,7 @@ const Wishlist = () => {
                 </thead>
                 <tbody>
                 {
-                    propertyes.map(property=>  <tr key={property._id}>
+                    filteredProperties.map(property=>  <tr key={property._id}>
                        <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                      <img src={property?.image} alt=""  />
                      </td>
