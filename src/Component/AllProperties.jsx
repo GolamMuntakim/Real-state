@@ -38,7 +38,7 @@ const AllProperties = () => {
     if (isLoading) return <LoadingSpinner />
     return (
         <div>
-            <div className="mt-8 flex justify-around">
+            <div className="mt-8 flex flex-col lg:flex-row justify-around">
                 <div>
                     <form onSubmit={handleSearch}>
                         <div className='flex gap-2'>

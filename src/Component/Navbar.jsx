@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import logo from '../../public/images/ani_logo.json'
 import Lottie from 'lottie-react'
 import avatar from '../../public/images/placeholder.jpg'
+import banner from  '../../public/images/banner.png'
+import bannerpic from '../../public/images/bannerpic.png'
 
 const Navbar = () => {
     const {user ,logOut} = useAuth()
@@ -22,14 +24,18 @@ const handleToggle = e => {
    
 }
     return (
-        <div className=' w-full bg-blue-500 z-10 shadow-sm'>
-        <div className='py-4 border-b-[1px]'>
+       <>
+      <div className='relative'>
+    
+    
+     <div className='bg-[#29A3FE] w-full  z-40 border-none  '>
+        <div className='py-4 '>
           <Container>
-            <div className='flex flex-row  items-center justify-between gap-3 md:gap-0 '>
+          <div className='flex flex-row  items-center justify-between gap-3 md:gap-0 '>
               {/* Logo */}
              <div className="flex items-center">
              <Link to='/'>
-                <Lottie className="h-16" animationData={logo}></Lottie>
+                <Lottie className="h-16 hidden lg:flex" animationData={logo}></Lottie>
               </Link>
               <h2 className="font-bold text-2xl">Real State</h2>
               <div>
@@ -50,7 +56,7 @@ onChange={handleToggle}
               </div>
              </div>
              
-             <div className="flex gap-4">
+             <div className="flex gap-4 font-bold text-white">
              <div>
               <Link to='/'>Home</Link>
              </div>
@@ -63,24 +69,21 @@ onChange={handleToggle}
               {/* Dropdown Menu */}
               <div className='relative'>
                 <div className='flex flex-row items-center gap-3'>
-                  {/* Become A Host btn */}
+                
                   <div className='hidden md:block'>
                     {/* {!user && ( */}
                       <div
-                        // disabled={!user}
-                        // onClick={()=> setIsModalOpen(true)}
+                        
                         className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
                       >
                        {user?.displayName}
                       </div>
                     {/* )} */}
                   </div>
-                  {/* Modal */}
-                  {/* <HostModal isOpen={isModalOpen} closeModal={closeModal} modalHandler={modalHandler}></HostModal> */}
-                  {/* Dropdown btn */}
+                  
                   <div
                     onClick={() => setIsOpen(!isOpen)}
-                    className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'>
+                    className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition z-20'>
                     {/* <AiOutlineMenu /> */}
                     <div className='hidden md:block'>
                       {/* Avatar */}
@@ -96,8 +99,8 @@ onChange={handleToggle}
                   </div>
                 </div>
                 {isOpen && (
-                  <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
-                    <div className='flex flex-col cursor-pointer'>
+                  <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm z-40'>
+                    <div className='flex flex-col cursor-pointer '>
                       <Link
                         to='/'
                         className='block  px-4 py-3 hover:bg-neutral-100 transition font-semibold'
@@ -146,8 +149,14 @@ onChange={handleToggle}
               </div>
             </div>
           </Container>
+         
+          
         </div>
       </div>
+     
+     
+      </div>
+       </>
     );
 };
 

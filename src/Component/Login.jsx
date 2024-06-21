@@ -110,9 +110,9 @@ const Login = () => {
           <div>
             <button
               type='submit'
-              className='bg-rose-500 w-full rounded-md py-3 text-white'
+              className='bg-blue-900 w-full rounded-md py-3 text-white'
             >
-              Continue
+              Log In
             </button>
           </div>
         </form>

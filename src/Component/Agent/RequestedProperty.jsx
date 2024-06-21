@@ -73,44 +73,44 @@ const RequestedProperty = () => {
                   <tr>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900 text-white  border-b border-gray-200   text-left text-sm uppercase font-normal'
                     >
                       Title
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900 text-white  border-b border-gray-200  text-left text-sm uppercase font-normal'
                     >
                       Location
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900 text-white  border-b border-gray-200   text-left text-sm uppercase font-normal'
                     >
                     Buyer Email
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900 text-white  border-b border-gray-200  text-left text-sm uppercase font-normal'
                     >
                      Buyer Name
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900 text-white  border-b border-gray-200   text-left text-sm uppercase font-normal'
                     >
                      Offered price
                     </th>
                    
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900 text-white  border-b border-gray-200   text-left text-sm uppercase font-normal'
                     >
                      Accept
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-green-900 text-white border-b border-gray-200   text-left text-sm uppercase font-normal'
                     >
                      Reject
                     </th>

@@ -16,9 +16,9 @@ const Wishlist = () => {
     // fetch users data
   
     const {data: propertyes=[], isLoading, refetch} = useQuery({
-        queryKey : ['manage-property'],
+        queryKey : ['wishlist-property'],
         queryFn : async()=>{
-          const {data} = await axiosSecure.get(`/manage-property`)
+          const {data} = await axiosSecure.get(`/wishlist-property`)
           return data.filter(state => state.add === 'wishlists')
         }
       })

@@ -52,7 +52,7 @@ const Signup = () => {
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold '>Sign Up</h1>
-          <p className='text-sm text-gray-400'>Welcome to StayVista</p>
+          <p className='text-sm text-gray-400'>Welcome to <span className="text-blue-900">Real State</span></p>
         </div>
         <form onSubmit={handleSubmit} className='space-y-6 ng-untouched ng-pristine ng-valid'
         >
@@ -118,9 +118,9 @@ const Signup = () => {
             <button
             disabled={loading}
               type='submit'
-              className='bg-rose-500 w-full rounded-md py-3 text-white'
+              className='bg-blue-900 w-full rounded-md py-3 text-white'
             >
-              {loading? <FaSpinner className='animate-spin m-auto'/> : 'loading..'}
+              {loading? <FaSpinner className='animate-spin m-auto'/> : 'sign up..'}
             </button>
           </div>
         </form>

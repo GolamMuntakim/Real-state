@@ -65,7 +65,7 @@ const PropertyDetails = () => {
             <div className='flex flex-col gap-6'>
               <div>
                 {/* <Heading title={room.title} subtitle={room.location} /> */}
-                <div className='w-full md:h-[60vh] overflow-hidden rounded-xl'>
+                <div className='w-full md:h-[60vh] overflow-hidden rounded-xl '>
                   <img
                     className='object-cover w-full'
                     src={property.image}
@@ -103,19 +103,19 @@ const PropertyDetails = () => {
                 <hr />
                 <div
                   className='
-          text-lg font-light text-neutral-500'
+          text-lg font-light text-black'
                 >
                   Title : {property?.title}
                 </div>
                 <div
                   className='
-          text-lg font-light text-neutral-500'
+          text-lg font-light text-black'
                 >
                   Location : {property?.location}
                 </div>
                 <div
                   className='
-          text-lg font-light text-neutral-500'
+          text-lg font-light text-black'
                 >
                   Price : {property?.price}
                 </div>

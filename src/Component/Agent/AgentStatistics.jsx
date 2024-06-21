@@ -51,7 +51,7 @@ const AgentStatistics = () => {
     // })
     // console.log(pieChartData)
     return (
-        <div>
+        <div className="text-center font-bold text-3xl">
             Welcome to Agent Dashboard
             <div>
             <div>
