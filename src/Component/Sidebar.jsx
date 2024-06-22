@@ -17,16 +17,17 @@ const Sidebar = () => {
   const [isActive, setActive] = useState(false)
   const [role, isLoading] = useRole()
   console.log(role, isLoading)
-//   const [toggle, setToggle] = useState(true)
+  const [toggle, setToggle] = useState(true)
 
   // Sidebar Responsive Handler
-  // const handleToggle = () => {
-  //   setActive(!isActive)
-  // }
-//   const toggleHandler= event =>{
-//     console.log(event.target.checked)
-//     setToggle(event.target.checked)
-//   }
+  const handleToggle = () => {
+    setActive(!isActive)
+  }
+  const toggleHandler= event =>{
+    console.log(event.target.checked)
+    setToggle(event.target.checked)
+  }
+
   return (
     <>
       {/* Small Screen Navbar */}
@@ -34,16 +35,17 @@ const Sidebar = () => {
         <div>
           <div className='block cursor-pointer p-4 font-bold'>
             <Link to='/'>
-              <img
-                // className='hidden md:block'
-                src='https://i.ibb.co/4ZXzmq5/logo.png'
-                alt='logo'
-                width='100'
-                height='100'
-              />
+             Real State
             </Link>
           </div>
+         
         </div>
+        <button
+          onClick={handleToggle}
+          className='mobile-menu-button p-4 focus:outline-none focus:bg-gray-200'
+        >
+          <AiOutlineBars className='h-5 w-5' />
+        </button>
       </div>
 
       {/* Sidebar */}

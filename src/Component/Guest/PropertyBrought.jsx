@@ -71,6 +71,12 @@ const PropertyBrought = () => {
                   >
                     Status
                   </th>
+                  <th
+                    scope='col'
+                    className='px-5 py-3 bg-[#F7EFE5]  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                  >
+                    Transiction Id
+                  </th>
                 </tr>
               </thead>
               <tbody>

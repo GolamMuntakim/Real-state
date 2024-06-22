@@ -19,6 +19,7 @@ import {
   Bar,
   Cell,
 } from "recharts";
+import { Helmet } from "react-helmet-async";
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -56,8 +57,13 @@ const AdminStatistics = () => {
     if(isLoading) return <LoadingSpinner></LoadingSpinner>
     return (
         <div>
+           <Helmet>
+            <title>
+              Admin Statics
+            </title>
+          </Helmet>
            <h1 className="text-center font-bold text-3xl">Welcome to Admin Dashboard</h1>
-           <div className="flex gap-4 mt-8">
+           <div className="grid grid-cols-1 lg:grid-cols-3 mx-auto gap-4 mt-8">
             <div className="p-4 bg-blue-900 text-white rounded-md">
                 <h1 className="flex items-center text-xl">Total User <span >: {statData?.totalusers}</span></h1>
             </div>
@@ -72,7 +78,8 @@ const AdminStatistics = () => {
             </div>
            </div>
            <div className="mt-8">
-           <BarChart
+          <ResponsiveContainer width="100%" height={300}>
+          <BarChart
       width={500}
       height={300}
       data={statData.bookingDetails}
@@ -93,6 +100,7 @@ const AdminStatistics = () => {
       </Bar>
       <Legend></Legend>
     </BarChart>
+          </ResponsiveContainer>
            </div>
         </div>
     );

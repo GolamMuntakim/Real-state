@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import LoadingSpinner from "../LoadingSpinner";
-import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 const getPath = (x, y, width, height) => {
     return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
@@ -28,11 +28,11 @@ const GuestStatistics = () => {
     if(isLoading) return <LoadingSpinner></LoadingSpinner>
     return (
         <div className="font-bold text-3xl text-center">
-        Welcome to Guest Dashboard
+        Welcome to Your Dashboard
         <div>
         <div>
       
-       <div className="flex gap-4 mt-8">
+       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
         <div className="p-4 bg-blue-900 text-white rounded-md">
             <h1 className="flex items-center text-xl">Total Bought Property <span >: {chartData?.totalSoldProperty}</span></h1>
         </div>
@@ -43,7 +43,8 @@ const GuestStatistics = () => {
        </div>
        <div className="mt-8">
       
-     <BarChart
+    <ResponsiveContainer width="100%" height={300}>
+    <BarChart
   width={500}
   height={300}
   data={chartData.bookingDetails}
@@ -64,6 +65,7 @@ const GuestStatistics = () => {
   </Bar>
   <Legend></Legend>
 </BarChart>
+    </ResponsiveContainer>
        </div>
     </div>
         </div>

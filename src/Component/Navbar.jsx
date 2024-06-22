@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
 import useAuth from "./hooks/useAuth";
 import { useEffect, useState } from "react";
 import logo from '../../public/images/ani_logo.json'
 import Lottie from 'lottie-react'
 import avatar from '../../public/images/placeholder.jpg'
-import banner from  '../../public/images/banner.png'
-import bannerpic from '../../public/images/bannerpic.png'
+import { AiOutlineMenu } from "react-icons/ai";
+
 
 const Navbar = () => {
     const {user ,logOut} = useAuth()
@@ -37,7 +37,7 @@ const handleToggle = e => {
              <Link to='/'>
                 <Lottie className="h-16 hidden lg:flex" animationData={logo}></Lottie>
               </Link>
-              <h2 className="font-bold text-2xl">Real State</h2>
+              <h2 className="font-bold lg:text-2xl">Real State</h2>
               <div>
               <label className="swap swap-rotate ">
 
@@ -56,12 +56,12 @@ onChange={handleToggle}
               </div>
              </div>
              
-             <div className="flex gap-4 font-bold text-white">
+             <div className="flex gap-4 lg:font-bold text-white">
              <div>
-              <Link to='/'>Home</Link>
+              <NavLink to='/' style={({isActive})=>(isActive?{borderBottom:"2px solid", color:"white"}:{font:"bold"})}>Home</NavLink>
              </div>
              <div>
-             <Link to='all-properties'>All properties</Link>
+             <NavLink to='all-properties' style={({isActive})=>(isActive?{borderBottom:"2px solid", color:"white"}:{font:"bold"})}>All properties</NavLink>
              </div>
              
              </div>
@@ -83,8 +83,8 @@ onChange={handleToggle}
                   
                   <div
                     onClick={() => setIsOpen(!isOpen)}
-                    className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition z-20'>
-                    {/* <AiOutlineMenu /> */}
+                    className='p-4 md:py-1 md:px-2  border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition z-20'>
+                    <AiOutlineMenu />
                     <div className='hidden md:block'>
                       {/* Avatar */}
                       <img

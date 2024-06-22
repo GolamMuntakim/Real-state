@@ -19,6 +19,7 @@ const MyAddedProperty = () => {
         }
       })
       console.log(propertyes)
+      const filteredProperties = propertyes.filter(property => property.email === user.email);
 
       //delete 
       const {mutateAsync} = useMutation({
@@ -110,7 +111,7 @@ const MyAddedProperty = () => {
                 <tbody>
                     {/* Room row data */}
                     {
-                        propertyes.map(property=>
+                        filteredProperties.map(property=>
                             
                             <PropertyRow key={property._id} property={property} refetch={refetch} handleDelete={handleDelete}/>
                          )

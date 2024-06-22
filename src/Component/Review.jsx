@@ -18,6 +18,7 @@ const Review = () => {
       console.log(propertyes)
     return (
         <div>
+            
              <div className='w-1/4 mx-auto text-center mt-10 mb-10' >
                 {/* <h1 className='text-yellow-500 pb-4'>---What Our Client Say---</h1> */}
                 <h1 className='uppercase  text-black font-bold text-3xl'>Latest  Reviews</h1>
@@ -28,11 +29,8 @@ const Review = () => {
         {
             propertyes.map(review => <SwiperSlide key={review._id}>
                <div className=' flex flex-col items-center mx-24 my-16'>
-               {/* <Rating
-      style={{ maxWidth: 180 }}
-      value={review.rating}
-      readOnly
-    /> */}<div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 bg-white text-black">
+             
+    <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 bg-white text-black">
 	<div className="flex justify-between p-4">
 		<div className="flex space-x-4">
 			<div>

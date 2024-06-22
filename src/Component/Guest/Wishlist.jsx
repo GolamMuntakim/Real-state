@@ -8,9 +8,11 @@ import useAuth from '../hooks/useAuth';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import OfferModal from './OfferModal';
 import useRole from '../hooks/useRole';
+import { useNavigate } from 'react-router-dom';
 
 const Wishlist = () => {
     const {user} = useAuth()
+    const navigate = useNavigate()
     const [isEditModal, setIsEditModal] = useState(false)
     const [propertys, setPropertys] = useState(null)
     const axiosSecure = useAxiosSecure()

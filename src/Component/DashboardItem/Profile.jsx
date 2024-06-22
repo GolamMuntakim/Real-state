@@ -35,7 +35,7 @@ const Profile = () => {
           <p className='p-2 px-4 uppercase text-xs text-white bg-green-500 rounded-full'>
             {role}
           </p>
-          <p className='mt-2 text-xl font-medium text-white '>
+          <p className='mt-2 text-xl font-medium text-white hidden lg:flex'>
             User Id: {user?.uid}
           </p>
           <div className='w-full p-2 mt-4 rounded-lg'>

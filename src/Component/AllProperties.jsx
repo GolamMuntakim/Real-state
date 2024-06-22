@@ -3,6 +3,7 @@ import { axiosCommon } from "./hooks/useAxiosCommon";
 import LoadingSpinner from "./LoadingSpinner";
 import PropertyCard from "./PropertyCard";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const AllProperties = () => {
     const [search, setSearch] = useState('')
@@ -38,6 +39,11 @@ const AllProperties = () => {
     if (isLoading) return <LoadingSpinner />
     return (
         <div>
+             <Helmet>
+            <title>
+              All Properties
+            </title>
+          </Helmet>
             <div className="mt-8 flex flex-col lg:flex-row justify-around">
                 <div>
                     <form onSubmit={handleSearch}>

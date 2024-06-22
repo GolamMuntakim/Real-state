@@ -63,7 +63,7 @@ import { useNavigate } from 'react-router-dom'
             setPropertys(null)
             setLoading(false)
             toast.success('Your Offer sent succesfully')
-            navigate('/')
+            navigate('/dashboard/property-brought')
             console.table(OfferedData)
           
             //post request to server

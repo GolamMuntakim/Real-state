@@ -80,7 +80,7 @@ const Advertise = () => {
                 {
                   propertyes.map(property => <tr key={property._id}>
                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                      <img src={property?.image} alt="" />
+                      <img className="w-40" src={property?.image} alt="" />
                     </td>
                     <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                       <p className='text-gray-900 whitespace-no-wrap'>{property.title}</p>

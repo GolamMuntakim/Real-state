@@ -16,13 +16,13 @@ const Testimonial = () => {
            <div className='text-center font-bold text-3xl'>
             Testimonial
            </div>
-           <div className='flex flex-col lg:flex-row justify-between items-center p-4 mt-20'>
-            <div className='w-1/2'>
+           <div className='flex flex-col lg:flex-row justify-between items-center lg:p-4 mt-20 mx-auto'>
+            <div className='lg:w-1/2'>
             <Swiper
         effect={'cards'}
         grabCursor={true}
         modules={[EffectCards]}
-        className="mySwiper w-[400px]"
+        className="mySwiper w-[300px] lg:w-[400px]"
       >
         <SwiperSlide> <img src="/images/slide1.png" alt=""  /></SwiperSlide>
         <SwiperSlide> <img src="/images/slide2.png" alt=""  /></SwiperSlide>
@@ -32,7 +32,7 @@ const Testimonial = () => {
        
       </Swiper>
             </div>
-            <div className='w-1/2'>
+            <div className='lg:w-1/2'>
                 <h4 className='font-bold text-2xl border-b-2 border-blue-900 pb-4'>
                 “I couldn't have asked for a better real estate partner. <br />From the moment I expressed interest in buying a home, <br />their team went above and beyond to make the process”
                 </h4>

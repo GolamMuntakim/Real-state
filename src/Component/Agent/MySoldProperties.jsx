@@ -1,9 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import { axiosSecure } from "../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import useAuth from "../hooks/useAuth";
 
 
 const MySoldProperties = () => {
+  const {user} = useAuth()
     const { data: propertyes = [], isLoading, refetch } = useQuery({
         queryKey: ['sold'],
         queryFn: async () => {
@@ -11,19 +13,21 @@ const MySoldProperties = () => {
           return data
         }
       })
-      console.log(propertyes)
-      const agentName = propertyes.length>0 ? propertyes[0]?.agent : 'unknown'
-      const totalSold = propertyes.reduce((total, property)=>{
+      const filteredProperties = propertyes.filter(property => property.agent === user.email);
+
+      console.log(filteredProperties)
+      
+      const totalSold = filteredProperties.reduce((total, property)=>{
         return total + Number(property?.offerprice || 0)
       },0)
     return (
         <div>
             <div className='container mx-auto px-4 sm:px-8'>
       <Helmet>
-        <title>Manage Property</title>
+        <title>Sold</title>
       </Helmet>
       <div className='py-8'>
-      <p className="font-bold">Total sold amount of <span className="text-blue-500">{agentName}</span> is <span className="text-red-800">${totalSold.toFixed(2)}</span></p>
+      <p className="font-bold">Total sold amount of <span className="text-blue-500">Agent </span> is <span className="text-red-800">${totalSold.toFixed(2)}</span></p>
         <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
           <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>
             <table className='min-w-full leading-normal'>
@@ -63,7 +67,7 @@ const MySoldProperties = () => {
               </thead>
               <tbody>
                 {
-                  propertyes.map(property => <tr key={property._id}>
+                  filteredProperties.map(property => <tr key={property._id}>
                     <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                       <p className='text-gray-900 whitespace-no-wrap'>{property?.title}</p>
                     </td>

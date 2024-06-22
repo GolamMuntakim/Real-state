@@ -18,6 +18,7 @@ import {
   Pie,
 } from "recharts";
 import LoadingSpinner from "../LoadingSpinner";
+import { Helmet } from "react-helmet-async";
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 const getPath = (x, y, width, height) => {
@@ -44,19 +45,20 @@ const AgentStatistics = () => {
     })
     console.log(chartData)
     if(isLoading) return <LoadingSpinner></LoadingSpinner>
-    // const pieChartData = chartData.totalRequestedProperty.map(data=>{
-    //     // console.log(pieChartData)
-    //     return {name: data.title, value: data.status}
-        
-    // })
-    // console.log(pieChartData)
+    
     return (
+        <>
+         <Helmet>
+            <title>
+              Agent Statics
+            </title>
+          </Helmet>
         <div className="text-center font-bold text-3xl">
             Welcome to Agent Dashboard
             <div>
             <div>
           
-           <div className="flex gap-4 mt-8">
+           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
             <div className="p-4 bg-blue-900 text-white rounded-md">
                 <h1 className="flex items-center text-xl">Total Added Property <span >: {chartData?.totalProperty}</span></h1>
             </div>
@@ -68,26 +70,11 @@ const AgentStatistics = () => {
             </div>
            </div>
            <div className="mt-8">
-           {/* <PieChart width={400} height={400}>
-          <Pie
-            data={pieChartData}
-            cx="50%"
-            cy="50%"
-            labelLine={false}
-            label={renderCustomizedLabel}
-            outerRadius={80}
-            fill="#8884d8"
-            dataKey="value"
-          >
-            {pieChartData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-          <Legend></Legend>
-        </PieChart> */}
-         <BarChart
-      width={500}
-      height={300}
+          
+        <ResponsiveContainer width="100%" height={300}>
+        <BarChart
+       width={500}
+       height={300}
       data={chartData.totalRequestedProperty}
       margin={{
         top: 20,
@@ -106,10 +93,12 @@ const AgentStatistics = () => {
       </Bar>
       <Legend></Legend>
     </BarChart>
+        </ResponsiveContainer>
            </div>
         </div>
             </div>
         </div>
+        </>
     );
 };
 
