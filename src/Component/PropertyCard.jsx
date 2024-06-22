@@ -6,7 +6,7 @@ const PropertyCard = ({property}) => {
     
     return (
         <div className="">
-             <div className="h-[380px] lg:w-96 glass rounded-md">
+             <div className="h-[380px]  lg:w-96 glass rounded-md">
                 <figure><img src={property.image} alt="car!" className="h-[200px] w-full"/></figure>
                 <div className="card-body">
                     <h2 className="card-title">Title: {property.title}</h2>

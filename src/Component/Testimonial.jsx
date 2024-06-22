@@ -32,7 +32,7 @@ const Testimonial = () => {
        
       </Swiper>
             </div>
-            <div className='lg:w-1/2'>
+            <div className='w-[300px] lg:w-1/2'>
                 <h4 className='font-bold text-2xl border-b-2 border-blue-900 pb-4'>
                 “I couldn't have asked for a better real estate partner. <br />From the moment I expressed interest in buying a home, <br />their team went above and beyond to make the process”
                 </h4>
