@@ -133,7 +133,7 @@ const RequestedProperty = () => {
                        <p className='text-gray-900 whitespace-no-wrap'>{offer?.guest.name}</p>
                      </td>
                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                       <p className='text-gray-900 whitespace-no-wrap'>{offer?.price}</p>
+                       <p className='text-gray-900 whitespace-no-wrap'>{offer?.offerprice}</p>
                      </td>
                      {offer.status !== 'Accepted' && offer.status !== 'Rejected' && offer.status !== 'Bought' &&(
                       <>

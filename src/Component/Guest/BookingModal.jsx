@@ -63,7 +63,7 @@ const BookingModal = ({ closeModal,setPropertys, bookingInfo , refetch}) => {
 
                 <div className='mt-2'>
                   <p className='text-sm text-gray-500'>
-                    Price: $ {bookingInfo.price}
+                    Price: $ {bookingInfo.offerprice}
                   </p>
                 </div>
                 <hr className='mt-8 ' />

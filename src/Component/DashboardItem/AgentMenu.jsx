@@ -5,7 +5,7 @@ const AgentMenu = () => {
   return (
     <>
         <MenuItem  label='Agent Statastics' address='/dashboard' />
-      <MenuItem  label='Add Property' address='add-property' />
+      <MenuItem className=''  label='Add Property' address='add-property' />
       <MenuItem 
        label='My Added property' address='my-added' />
       <MenuItem

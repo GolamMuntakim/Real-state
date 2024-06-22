@@ -14,7 +14,7 @@ const MySoldProperties = () => {
       console.log(propertyes)
       const agentName = propertyes.length>0 ? propertyes[0]?.agent : 'unknown'
       const totalSold = propertyes.reduce((total, property)=>{
-        return total + Number(property?.price || 0)
+        return total + Number(property?.offerprice || 0)
       },0)
     return (
         <div>
@@ -77,7 +77,7 @@ const MySoldProperties = () => {
                       <p className='text-gray-900 whitespace-no-wrap'>{property?.guest.name}</p>
                     </td>
                     <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-                      <p className='text-gray-900 whitespace-no-wrap'>{property?.price}</p>
+                      <p className='text-gray-900 whitespace-no-wrap'>{property?.offerprice}</p>
                     </td>
                  
                   </tr>)

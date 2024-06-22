@@ -17,7 +17,7 @@ const OfferModalForm = ({ handleOfferSubmit,onChange,value, setPropertyData, pro
     return (
         <>
             {/* <input type="file" name="" id="" /> */}
-            <div className='w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50'>
+            <div className='w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-[#F7EFE5]'>
                 <form onSubmit={handleOfferSubmit}>
                     <div className='grid grid-cols-1 gap-10'>
 
@@ -77,7 +77,7 @@ const OfferModalForm = ({ handleOfferSubmit,onChange,value, setPropertyData, pro
                                     className='w-[400px] px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500 rounded-md '
                                     name='price'
                                     id='price'
-                                    type='number'
+                                    type='text'
                                     value={propertyData?.offerprice}
                                     onChange={(e) => setPropertyData({ ...propertyData, offerprice: e.target.value })}
                                     placeholder='Price'

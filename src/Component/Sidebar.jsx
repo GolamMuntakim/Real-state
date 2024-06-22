@@ -84,7 +84,7 @@ const Sidebar = () => {
               {/* <MenuItem label="Add Property" address='/add-property' icon={BsGraphUp}></MenuItem> */}
             
              {role === 'guest' && <GuestMenu></GuestMenu>} 
-             {role === 'agent' && <AgentMenu></AgentMenu>}
+             {role === 'agent' && <AgentMenu className="bg-[#F1E5D1]"></AgentMenu>}
             {/* <AdminMenu></AdminMenu> */}
              {role === 'admin' && <AdminMenu></AdminMenu>}
             

@@ -19,10 +19,10 @@ const Checkout = ({closeModal,bookingInfo, refetch}) => {
 
   useEffect(()=>{
     //fetch client secret
-    if(bookingInfo?.price && bookingInfo?.price>1){
-        getClientSecret({price: bookingInfo?.price})
+    if(bookingInfo?.offerprice && bookingInfo?.offerprice>1){
+        getClientSecret({price: bookingInfo?.offerprice})
     }
-  },[bookingInfo?.price])
+  },[bookingInfo?.offerprice])
   //get client secret
   const getClientSecret = async price =>{
     const {data} = await axiosSecure.post('/create-payment-intent', price)
@@ -140,7 +140,7 @@ if(confirmError){
                       className='inline-flex justify-center rounded-md border border-transparent bg-green-900 px-4 py-2 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2'
                     >
                 
-                      Pay ${bookingInfo?.price}
+                      Pay ${bookingInfo?.offerprice}
                     </button>
                     <button
                       type='button'

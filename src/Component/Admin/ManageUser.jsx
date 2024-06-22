@@ -127,6 +127,12 @@ const ManageUsers = () => {
                       scope='col'
                       className='px-5 py-3 bg-green-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
+                      Role
+                    </th>
+                    <th
+                      scope='col'
+                      className='px-5 py-3 bg-green-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
+                    >
                       Make Agent
                     </th>
                     <th
@@ -158,6 +164,9 @@ const ManageUsers = () => {
                      </td>
                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                        <p className='text-gray-900 whitespace-no-wrap'>{user?.email}</p>
+                     </td>
+                     <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+                       <p className='text-gray-900 whitespace-no-wrap'>{user?.role}</p>
                      </td>
                      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
                      <button onClick={()=>handleMakeAgent(user)}  className="btn bg-green-900 text-white ">

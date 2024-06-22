@@ -24,7 +24,7 @@ const Wishlist = () => {
         }
       })
     console.log(propertyes)
-    const filteredProperties = propertyes.filter(property => property.email === user.email);
+    const filteredProperties = propertyes.filter(property => property?.email === user?.email);
 
     
 
@@ -64,56 +64,56 @@ const Wishlist = () => {
                   <tr>
                   <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Image
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900 border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Title
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Location
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Agent Name
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                       Agent Image
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                      Status
                     </th>
 
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900 border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                      Price
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                      Offer
                     </th>
                     <th
                       scope='col'
-                      className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                      className='px-5 py-3 bg-blue-900  border-b border-gray-200 text-white  text-left text-sm uppercase font-normal'
                     >
                     Remove
                     </th>
