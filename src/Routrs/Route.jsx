@@ -22,6 +22,9 @@ import AllProperties from "../Component/AllProperties";
 import Advertaisment from "../Component/Advertaisment";
 import Advertise from "../Component/Admin/Advertise";
 import Statistics from "../Component/Common/Statistics";
+import PrivateRoute from "../Component/PrivateRoute";
+import AgentRoute from "./AgentRoute";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
     {
@@ -35,7 +38,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'propertyDetails/:id',
-          element:<PropertyDetails></PropertyDetails>
+          element:<PrivateRoute><PropertyDetails></PropertyDetails></PrivateRoute>
         },
         {
           path:'all-properties',
@@ -47,59 +50,59 @@ export const router = createBrowserRouter([
     {path:'/signup', element:<Signup></Signup>},
     {
       path:'/dashboard',
-     element:<Dashboard></Dashboard>,
+     element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
      children:[
       {
         index: true,
-        element: <Statistics></Statistics>
+        element: <PrivateRoute><Statistics></Statistics></PrivateRoute>
       },
       {
         path:'profile',
-        element: <Profile></Profile>
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       },
       {
         path:'add-property',
-        element: <AddProperty></AddProperty>
+        element: <PrivateRoute><AgentRoute><AddProperty></AddProperty></AgentRoute></PrivateRoute>
       },
       {
         path:'my-added',
-        element: <MyAddedProperty />
+        element: <PrivateRoute><AgentRoute><MyAddedProperty /></AgentRoute></PrivateRoute>
       },
       {
         path:'requested',
-        element: <RequestedProperty></RequestedProperty>
+        element: <PrivateRoute><AgentRoute><RequestedProperty></RequestedProperty></AgentRoute></PrivateRoute>
       },
       {
         path:'manage-users',
-        element: <ManageUser></ManageUser>
+        element: <PrivateRoute><AdminRoute><ManageUser></ManageUser></AdminRoute></PrivateRoute>
       },
       {
         path:'manage-property',
-        element: <ManageProperty></ManageProperty>
+        element: <PrivateRoute><AdminRoute><ManageProperty></ManageProperty></AdminRoute></PrivateRoute>
       },
       {
         path:'my-wishlist',
-        element: <Wishlist></Wishlist>
+        element: <PrivateRoute><Wishlist></Wishlist></PrivateRoute>
       },
       {
         path:'property-brought',
-        element: <PropertyBrought></PropertyBrought>
+        element: <PrivateRoute><PropertyBrought></PropertyBrought></PrivateRoute>
       },
       {
         path:'reviews',
-        element: <MyReviews></MyReviews>
+        element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
       },
       {
         path:'sold',
-        element: <MySoldProperties></MySoldProperties>
+        element:<PrivateRoute><AgentRoute> <MySoldProperties></MySoldProperties></AgentRoute></PrivateRoute>
       },
       {
         path:'manage-reviews',
-        element: <ManageReviews></ManageReviews>
+        element: <PrivateRoute><AdminRoute><ManageReviews></ManageReviews></AdminRoute></PrivateRoute>
       },
       {
         path:'advertise',
-        element: <Advertise></Advertise>
+        element:<PrivateRoute><AdminRoute> <Advertise></Advertise></AdminRoute></PrivateRoute>
       },
       
      ]

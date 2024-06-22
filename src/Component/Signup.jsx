@@ -18,14 +18,17 @@ const Signup = () => {
     const email = form.email.value
     const password = form.password.value 
     const image = form.image.files[0] 
-    // const formData = new FormData()
-    // formData.append('image', image)
-    // console.log(name, email, password)
-    // console.log(image)
+    const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*()_+\-=])(?=.*[A-Z]).{6,}$/;
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters long.");
+      return;
+    }
+    if (!passwordRegex.test(password)) {
+      toast.error("Password must contain at least one digit, one special character, and one uppercase letter.");
+      return;
+    }
     try{
       setLoading(true)
-      // const {data} = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_API_KEY}`,formData)
-      // console.log(data)
       const image_url = await imageUpload(image)
       console.log(image_url)
       const result = await createUser(email, password)
