@@ -9,7 +9,7 @@
 >Payment intgration method implemented
 >Admin, user and agent dashboard implemented
 >Admin have it's organized porwer that, admin can make agent or remove any agent or user.
-### server side github link:
+### server side github link:https://github.com/GolamMuntakim/Real-state-server
 ### Overview : This project is a real state based project , here admin will make agents and agent will add state/property with the approval of admin, user can make offer request to buye the project , if agent accept the request then the user can pay. Every one have their own dashboard.
 ### Technology: headlessui/react,stripe/react-stripe-js,stripe/stripe-js,tanstack/react-query,axios,firebase,jsonwebtoken,lottie-react,react-date-picker,react-dom,react-helmet-async,react-hot-toast,react-icons,react-parallax,react-router-dom,react-simple-typewriter,react-spinners,recharts,sweetalert2,swiper
 ### How can you start this project: 
