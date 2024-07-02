@@ -44,7 +44,7 @@ const AllProperties = () => {
               All Properties
             </title>
           </Helmet>
-            <div className="mt-8 flex flex-col lg:flex-row justify-around">
+            <div className="mt-8 flex flex-col gap-4 max-auto mx-4 lg:flex-row  lg:justify-around">
                 <div>
                     <form onSubmit={handleSearch}>
                         <div className='flex gap-2'>

@@ -23,6 +23,7 @@ const Checkout = ({closeModal,bookingInfo, refetch}) => {
         getClientSecret({price: bookingInfo?.offerprice})
     }
   },[bookingInfo?.offerprice])
+  
   //get client secret
   const getClientSecret = async price =>{
     const {data} = await axiosSecure.post('/create-payment-intent', price)
