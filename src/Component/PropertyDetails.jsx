@@ -41,11 +41,9 @@ const PropertyDetails = () => {
         }
       })
   }
-  // const [isOpen, setIsOpen] = useState(false)
+ 
   const [isEditModal, setIsEditModal] = useState(false)
-  // const closeModal=()=>{
-  //     setIsOpen(false)
-  // }
+
 
 
   if (isLoading) return <LoadingSpinner />

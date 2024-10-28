@@ -29,7 +29,7 @@ const handleToggle = e => {
       <div className='relative'>
     
     
-     <div className='bg-[#29A3FE] w-[400px] md:w-[600px] lg:w-full  z-40 border-none  '>
+     <div className='bg-[#29A3FE] w-[400px] md:w-[600px] lg:w-full mx-auto  z-40 border-none  '>
         <div className='py-4 '>
           <Container>
           <div className='flex flex-row  items-center justify-between gap-3 md:gap-0 '>
@@ -38,7 +38,7 @@ const handleToggle = e => {
              <Link to='/'>
                 <Lottie className="h-16 hidden lg:flex" animationData={logo}></Lottie>
               </Link>
-              <h2 className="lg:font-bold lg:text-2xl">Real State</h2>
+              <h2 className="font-bold lg:text-2xl">Real State</h2>
               <div className="lg:flex hidden">
               <label className="swap swap-rotate ">
 
@@ -72,14 +72,12 @@ onChange={handleToggle}
                 <div className='flex flex-row items-center gap-3'>
                 
                   <div className='hidden md:block'>
-                    {/* {!user && ( */}
                       <div
                         
                         className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'
                       >
                        {user?.displayName.split('@')[0].substring(0, 8)}
                       </div>
-                    {/* )} */}
                   </div>
                   
                   <div

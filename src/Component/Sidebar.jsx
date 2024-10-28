@@ -83,7 +83,6 @@ const Sidebar = () => {
             {/*  Menu Items */}
             <nav>
               {/* Statistics */}
-              {/* <MenuItem label="Add Property" address='/add-property' icon={BsGraphUp}></MenuItem> */}
             
              {role === 'guest' && <GuestMenu></GuestMenu>} 
              {role === 'agent' && <AgentMenu className="bg-[#F1E5D1]"></AgentMenu>}

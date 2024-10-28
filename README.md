@@ -1,6 +1,6 @@
 
 ### Website name: Real State
-### Website live site link: https://b9-a12-8bd90.web.app
+### Website live site link: https://luxary-state.netlify.app
 ### Admin email : admin@gmail.com
 ### Admin password : Aa123&&
 ### Agent email : agent@gmail.com

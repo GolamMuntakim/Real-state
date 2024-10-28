@@ -4,7 +4,6 @@ import { FcGoogle } from 'react-icons/fc'
 import useAuth from '../Component/hooks/useAuth'
 
 import toast from 'react-hot-toast'
-// import { FaSpinner } from "react-icons/fa6";
 import { useState } from 'react';
 
 const Login = () => {
@@ -20,16 +19,8 @@ const Login = () => {
     const form = e.target
     const email = form.email.value
     const password = form.password.value 
-    // console.log(name, email, password)
     try{
       setLoading(true)
-      // Compare entered password with stored password
-      // if (password === "auth/invalid-credential") {
-      //   setLoading(false);
-      //   toast.error("Incorrect password.");
-      //   return;
-      // }
-      // sign in user
       await signIn( email, password)
       navigate(from)
       toast.success("Login succesfully")

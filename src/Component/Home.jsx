@@ -8,7 +8,7 @@ import Testimonial from "./Testimonial";
 
 const Home = () => {
     return (
-        <div className="w-[400px] md:w-[600px] lg:w-full p-0 m-0">
+        <div className="w-full md:w-[600px] lg:w-full p-0 m-0">
           <Helmet>
             <title>
               Home
